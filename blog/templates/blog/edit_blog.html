@@ -1,0 +1,21 @@
+<!-- blog/templates/blog/edit_blog.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <div style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <h2 style="text-align: center; margin-bottom: 20px;">Edit Blog</h2>
+
+    <form method="post" style="display: flex; flex-direction: column;">
+      {% csrf_token %}
+      
+      <label for="{{ form.title.id_for_label }}" style="margin-bottom: 8px;">Title:</label>
+      {{ form.title }}
+      
+      <label for="{{ form.content.id_for_label }}" style="margin-top: 15px; margin-bottom: 8px;">Content:</label>
+      {{ form.content }}
+
+      <button type="submit" style="background-color: #007BFF; color: #fff; padding: 8px 12px; border: none; cursor: pointer; margin-top: 15px;">Save Changes</button>
+    </form>
+  </div>
+{% endblock %}

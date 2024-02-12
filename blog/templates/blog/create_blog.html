@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); text-align: center;">
+    <h2 style="color: #007BFF; margin-bottom: 20px;">Create Blog</h2>
+
+    <form method="post" style="display: flex; flex-direction: column; align-items: center;">
+      {% csrf_token %}
+      
+      <label for="{{ form.title.id_for_label }}" style="margin-bottom: 8px; font-weight: bold; color: #333;">Title:</label>
+      {{ form.title }}
+      
+      <label for="{{ form.content.id_for_label }}" style="margin-top: 15px; margin-bottom: 8px; font-weight: bold; color: #333;">Content:</label>
+      {{ form.content }}
+
+      <button type="submit" style="background-color: #007BFF; color: #fff; padding: 10px 20px; border: none; cursor: pointer; margin-top: 20px; border-radius: 5px;">Create Blog</button>
+    </form>
+  </div>
+{% endblock %}
